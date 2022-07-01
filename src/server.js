@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import conFigViewEngine from './configs/viewEngine.js';
 const app = express();
 dotenv.config();
+
 const port = process.env.PORT || 8080;
 
 conFigViewEngine(app);
