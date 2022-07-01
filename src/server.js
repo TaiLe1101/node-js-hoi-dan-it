@@ -1,12 +1,13 @@
-const express = require('express');
-const dotEnv = require('dotenv').config();
+import express from 'express';
+import dotenv from 'dotenv';
+import conFigViewEngine from './configs/viewEngine.js';
 const app = express();
+dotenv.config();
 const port = process.env.PORT || 8080;
 
+conFigViewEngine(app);
 app.get('/', (req, res) => {
-  res.send(
-    'Hello mấy bạn mình là Tài Lê hôm nay mình học nodeJS bên ông Hỏi Dân IT :>'
-  );
+  res.render('index.ejs');
 });
 
 app.listen(port, () => {
